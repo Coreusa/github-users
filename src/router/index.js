@@ -15,7 +15,7 @@ const routes = [
     alias: '/user/:username',
     name: 'Users',
     component: Users
-  },
+  }
   // {
   //   path: '/users/:id',
   //   name: 'UserDetails',
