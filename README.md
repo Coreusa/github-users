@@ -1,5 +1,8 @@
 # Github Users
 
+Lists Github users and allows searching for them.
+
+You can try this yourself over at [http://assignments-and-such.herokuapp.com](https://assignments-and-such.herokuapp.com)
 ## Project setup
 ```
 yarn install
