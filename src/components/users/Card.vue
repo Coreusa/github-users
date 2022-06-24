@@ -1,14 +1,6 @@
 <!-- Display a user's profile common data -->
 <template>
   <div>
-    <img
-      :src="user.avatar_url"
-      loading="lazy"
-      :alt="`${user.login}'s profile image`"
-      :title="`${user.login}'s profile image`"
-      v-b-tooltip.hover
-      class="img-fluid user-profile img-round me-2 mb-3"
-    />
     <router-link
       :to="{
         name: 'Users',
@@ -17,6 +9,14 @@
         }
       }"
     >
+      <img
+        :src="user.avatar_url"
+        loading="lazy"
+        :alt="`${user.login}'s profile image`"
+        :title="`${user.login}'s profile image`"
+        v-b-tooltip.hover
+        class="img-fluid user-profile img-round me-2 mb-3"
+      />
       <h6>
         {{ user.login }}
       </h6>

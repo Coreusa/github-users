@@ -8,45 +8,41 @@
         :alt="`${data.profile.login}'s profile image`"
         :title="`${data.profile.login}'s profile image`"
         v-b-tooltip.hover
-        class="img-fluid user-profile img-round m-2"
+        class="img-fluid user-profile img-round m-4"
       />
       <div class="text-light">
         <h2>
-          {{ data.profile.name }}
+          {{ data.profile.name || data.profile.login }}
         </h2>
-        <small class="fst-italic">
+        <span class="fst-italic">
           <font-awesome-icon
             :icon="['fas', 'user-tag']"
             fixed-width
           />
           {{ data.profile.login }}
-        </small>
-        <small class="mx-2">
+        </span>
+        <span class="mx-2">
           <font-awesome-icon
-            :icon="['fas', 'user-tag']"
-            fixed-width
+            :icon="['fas', 'location-dot']"
           />
-          {{ data.profile.location }}
-        </small>
-        <small
-          class="mx-2"
-          title="Followers"
-        >
-          <font-awesome-icon
-            :icon="['fas', 'user-tag']"
-            fixed-width
-          />
-          {{ data.profile.followers }}
-        </small>
-        <small
-          title="Following"
-        >
-          <font-awesome-icon
-            :icon="['fas', 'user-tag']"
-            fixed-width
-          />
-          {{ data.profile.following }}
-        </small>
+          {{ data.profile.location || 'N/A' }}
+        </span>
+        <div class="mt-2">
+          <span>
+            <font-awesome-icon
+              :icon="['fas', 'code']"
+            />
+            Repos:
+            {{ data.profile.public_repos || 'N/A' }}
+          </span>
+          <span class="mx-2">
+            <font-awesome-icon
+              :icon="['fas', 'users']"
+            />
+            Followers:
+            {{ data.profile.followers || 'N/A' }}
+          </span>
+        </div>
       </div>
     </div>
     <!-- User list short details -->
@@ -110,12 +106,12 @@ export default {
     mostForkedRepos () {
       // Avoid side-effects in computed properties
       const tmp = JSON.parse(JSON.stringify(this.data.repos))
-      return tmp.sort((a, b) => b.forks - a.forks).splice(0, 5)
+      return tmp.sort((a, b) => b.forks - a.forks)
     },
     mostWatchedRepos () {
       // Avoid side-effects in computed properties
       const tmp = JSON.parse(JSON.stringify(this.data.repos))
-      return tmp.sort((a, b) => b.watchers - a.watchers).splice(0, 5)
+      return tmp.sort((a, b) => b.watchers - a.watchers)
     }
   },
   mounted () {

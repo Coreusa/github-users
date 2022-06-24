@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Index from '@/views/Index.vue'
 import Users from '@/views/Users.vue'
+import Search from '@/views/Search.vue'
 
 const routes = [
   {
@@ -15,6 +16,13 @@ const routes = [
     alias: '/user/:username',
     name: 'Users',
     component: Users
+  },
+  {
+    // This is imo the correct pathing, but...
+    path: '/search',
+    // // ...the task assignment asked for /user/:username, so we add that as an alias
+    name: 'Search',
+    component: Search
   }
   // {
   //   path: '/users/:id',

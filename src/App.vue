@@ -1,7 +1,5 @@
 <template>
-  <div id="nav">
-    <router-link to="/search">Search</router-link>
-  </div>
+  <Menu />
   <b-container
     fluid
   >
@@ -10,6 +8,14 @@
     </b-row>
   </b-container>
 </template>
-
+<script>
+import Menu from '@/components/common/Menu'
+export default {
+  name: 'GithubUsers',
+  components: {
+    Menu
+  }
+}
+</script>
 <style lang="less">
 </style>

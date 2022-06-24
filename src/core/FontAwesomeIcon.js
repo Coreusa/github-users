@@ -8,11 +8,15 @@ import {
   faChevronLeft,
   faChevronUp,
   faCircleNotch,
+  faCode,
   faCodeBranch,
   faEye,
-  faFile,
   faExclamationTriangle,
+  faFile,
   faInfoCircle,
+  faLocationDot,
+  faMagnifyingGlass,
+  faUsers,
   faUserTag
 } from '@fortawesome/free-solid-svg-icons'
 
@@ -24,11 +28,15 @@ library.add(
   faChevronLeft,
   faChevronUp,
   faCircleNotch,
+  faCode,
   faCodeBranch,
   faEye,
-  faFile,
   faExclamationTriangle,
+  faFile,
   faInfoCircle,
+  faLocationDot,
+  faMagnifyingGlass,
+  faUsers,
   faUserTag
 )
 

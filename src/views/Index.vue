@@ -1,5 +1,6 @@
 <template>
-  <div class="home">
+  <div>
+    <h2 class="my-4">Github Users</h2>
     <Loading
       v-if="loading"
     />

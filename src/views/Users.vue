@@ -2,16 +2,6 @@
   <b-row
     class="col-12 mx-auto"
   >
-    <pre>
-      {{ username }}
-    </pre>
-    <router-link
-      :to="{
-        name: 'Index'
-      }"
-    >
-      Back to listing
-    </router-link>
     <Loading
       v-if="loading"
     />
@@ -49,7 +39,7 @@ export default {
   },
   async mounted () {
     try {
-      this.loading = false
+      this.loading = true
       // Cache entry so we don't have to use more bandwidth than necessary
       if (localStorage[`github-user-${this.username}`]) {
         this.user = JSON.parse(localStorage[`github-user-${this.username}`])
